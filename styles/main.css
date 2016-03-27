@@ -128,7 +128,7 @@ nav a.active span{
   margin-bottom: 5%;
 }
 
-.info-container :not(.info) {
+.info-container>:not(.info) {
   display: none;
 }
 
@@ -136,6 +136,24 @@ nav a.active span{
   padding: 20px;
 }
 
+.info-container p {
+  margin: 10px 0;
+}
+
+.info-container img {
+  float: right;
+  margin: 20px;
+}
+
+#education h2, #education h3{
+  font-weight: normal;
+  font-size: 16pt;
+  padding: 0;
+  margin: 0;
+}
+#education h3{
+  font-size: 14pt;
+}
 
 video {
   z-index: -1;
@@ -147,11 +165,13 @@ video {
   min-width: 1280px;
 }
 
-.grad-shadow {
+.grad {
   background: -moz-linear-gradient(70deg,  rgba(229,221,190,0.7) 0%, rgba(229,221,190,0) 31%, rgba(229,221,190,0) 78%, rgba(229,221,190,0.7) 100%);
   background: -webkit-linear-gradient(70deg,  rgba(229,221,190,0.7) 0%,rgba(229,221,190,0) 31%,rgba(229,221,190,0) 78%,rgba(229,221,190,0.7) 100%);
   background: linear-gradient(70deg,  rgba(229,221,190,1) 0%,rgba(255,255,255,1) 31%,rgba(255,255,255,1) 78%,rgba(229,221,190,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e5ddbe', endColorstr='#b3e5ddbe',GradientType=1 );
+}
+.shadow {
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
               0 4px 5px 0 rgba(0, 0, 0, 0.14),
               0 1px 10px 0 rgba(0, 0, 0, 0.12);
@@ -179,5 +199,15 @@ video {
     max-width: 600px;
     margin: 3% 5%;
     padding: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .info-container img {
+    display: block;
+    float:none;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

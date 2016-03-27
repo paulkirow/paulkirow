@@ -10,23 +10,14 @@
 	<!-- Disable tap highlight on IE -->
 	<meta name="msapplication-tap-highlight" content="no">
 
-	<!-- Web Application Manifest -->
-	<link rel="manifest" href="manifest.json">
-
 	<!-- Add to homescreen for Chrome on Android -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="Paul Kirow">
-	<link rel="icon" sizes="192x192" href="images/chrome-touch-icon-192x192.png">
 
 	<!-- Add to homescreen for Safari on iOS -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="Web Starter Kit">
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-
-	<!-- Tile icon for Win8 (144x144 + tile color) -->
-	<meta name="msapplication-TileImage" content="images/ms-touch-icon-144x144-precomposed.png">
-	<meta name="msapplication-TileColor" content="#2F3BA2">
+	<meta name="apple-mobile-web-app-title" content="Paul Kirow - Software Developer">
 
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Balthazar">
@@ -36,7 +27,7 @@
 <div>
 	<main>
 		<section class="card-frame">
-			<div class="card-container grad-shadow">
+			<div class="card-container grad shadow">
 				<div class="card">
 					<div class="card-top">
 						<div class="left">
@@ -62,25 +53,31 @@
 			</div>
 		</section>
 		<section class="menu-frame">
-			<nav class="grad-shadow">
-				<a href="#about" class="active" onclick="tabClick('about')"><span>About Me</span></a>
-				<a href="#work" onclick="tabClick('work')"><span>Work</span></a>
+			<nav class="shadow">
+				<a href="#work" class="active" onclick="tabClick('work')"><span>Work</span></a>
 				<a href="#projects" onclick="tabClick('projects')"><span>Projects</span></a>
 				<a href="#education" onclick="tabClick('education')"><span>Education</span></a>
 				<a href="#interests" onclick="tabClick('interests')"><span>Interests</span></a>
 			</nav>
-			<div class="info-container grad-shadow">
-				<div id="about" class="info">
-					Passionate, quick learning, and business oriented are all things you should think when you hear the name Paul Kirow.
-				</div>
-				<div id="work">
-					I have completed three work terms with Scotiabank totaling 16 months of work experience.
+			<div class="info-container shadow">
+				<div id="work" class="info">
+					<img src="images/scotia.png"/>
+					I have completed three work terms with Scotiabank totaling 16 months of work experience.<p/>
+					During all three terms I worked for the Algorithmic Trading Team to develop software that would make daily tasks more efficient. Often the projects I worked on used large amounts of trade data and were time sensitive.<p/>
+					The technologies I used were C#, SQL, Java, Python, and VBA.
 				</div>
 				<div id="projects">
-					I have completed three work terms with Scotiabank
+					<a href="salt.to">SALT</a>, a website to help introduce notable food cuisines in Scarborough.  Built in Django with Material Design.<p/>
+					<a href="https://mediacat.utsc.utoronto.ca/">MediaCat</a>, a project to assist in the research of online news. I assisted in the early software designing stages.<p/>
+					<a href="https://github.com/matplotlib/matplotlib">Matplotlib</a>, an open-source python plotting library.  I have made several contributions to the library.<p/>
+					<a href="http://www.libbyreeves.me/">Libby Reeves's Portfolio</a>, a testament to what can be done in 5 hours.
 				</div>
 				<div id="education">
-					I have completed three work terms with Scotiabank
+					<img src="images/utsc.png"/>
+					<h2>University of Toronto</h2>
+					<h3>Honours Bachelor of Science</h3>
+					Computer Science Specialist Program, 4th year<p/>
+					I will be graduating in mid-April, 2016.
 				</div>
 				<div id="interests">
 					I have completed three work terms with Scotiabank
