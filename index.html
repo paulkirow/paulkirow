@@ -1,108 +1,128 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Recent Computer Science graduate with 16 months of internship experience">
+	<meta name="description" content="Software Developer">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Paul Kirow - Software Developer</title>
+	<title>Paul Kirow - Software Manager</title>
 
 	<!-- Disable tap highlight on IE -->
 	<meta name="msapplication-tap-highlight" content="no">
 
-	<!-- Add to homescreen for Chrome on Android -->
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="application-name" content="Paul Kirow">
+	<style>
+html, body {
+  font-family: serif;
+  font-variant: small-caps;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
 
-	<!-- Add to homescreen for Safari on iOS -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="apple-mobile-web-app-title" content="Paul Kirow - Software Developer">
+.card-frame {
+  display: flex;
+  justify-content: center;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+}
+.card-container {
+  width: 90%;
+  max-width: 600px;
+  padding: 2% 0;
+  margin: 3% 5%;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+              0 4px 5px 0 rgba(0, 0, 0, 0.14),
+              0 1px 10px 0 rgba(0, 0, 0, 0.12);
+  background: -moz-linear-gradient(70deg,  rgba(229,221,190,0.7) 0%, rgba(229,221,190,0) 31%, rgba(229,221,190,0) 78%, rgba(229,221,190,0.7) 100%);
+  background: -webkit-linear-gradient(70deg,  rgba(229,221,190,0.7) 0%,rgba(229,221,190,0) 31%,rgba(229,221,190,0) 78%,rgba(229,221,190,0.7) 100%);
+  background: linear-gradient(70deg,  rgba(229,221,190,0.7) 0%,rgba(229,221,190,0) 31%,rgba(229,221,190,0) 78%,rgba(229,221,190,0.7) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e5ddbe', endColorstr='#b3e5ddbe',GradientType=1 );
+}
 
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Balthazar">
-	<link rel="stylesheet" href="styles/main.css">
+.card {
+  display: flex;
+  flex-direction: column;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  text-align: center;
+  text-shadow: 0px 0px 2px rgba(150, 150, 150, 1);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  display: -webkit-flex;
+  -webkit-justify-content: space-between;
+  margin: 0 16px;
+}
+
+.card-mid {
+  margin: 80px 0;
+}
+
+.card p {
+  margin: -5px;
+}
+.card a:link, .card a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+.card .a, .card .b, .card .c, .card .d, .card .e, .card .f {
+  display: inline;
+  font-weight: normal;
+  font-size: 20pt;
+}
+.card .a {
+  text-transform: uppercase;
+}
+.card .c {
+  font-size: 16pt;
+}
+.card .d {
+  font-size: 14pt;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px rgba(150, 150, 150, 0.5);
+}
+.card .e {
+  font-size: 12pt;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px rgba(150, 150, 150, 0.5);
+}
+.card .f {
+  font-size: 16pt;
+  text-transform: none;
+  text-shadow: 0 0 2px rgba(150, 150, 150, 0.5);
+}
+	</style>
 </head>
 <body>
 <div>
 	<main>
-		<section class="card-frame">
-			<div class="card-container grad shadow">
+		<div class="card-frame">
+			<div class="card-container">
 				<div class="card">
 					<div class="card-top">
 						<div class="left">
-							<h5>paul @ kirow.ca</h5>
+							<span class="e">paul @ kirow.ca</span>
 						</div>
 						<div class="right">
-							<h4>University of Toronto</h4>
-							<p/>
-							<h5>Undergraduate</h5>
+							<span class="d">WhoPlusYou</span>
 						</div>
 					</div>
 					<div class="card-mid">
-						<h2>Paul</h2>
-						<h1>Kirow</h1>
+						<span class="b">Paul</span>
+						<span class="a">Kirow</span>
 						<p/>
-						<h3>software developer</h3>
+						<span class="c">software manager</span>
 					</div>
 					<div class="card-bot">
-						<h6><a href="ca.linkedin.com/in/paulkirow">linkedin</a> - <a href="https://github.com/paulkirow">github</a>
-						</h6>
+						<span class="f"><a href="https://ca.linkedin.com/in/paulkirow">linkedin</a> - <a href="https://github.com/paulkirow">github</a>
+						</span>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="menu-frame">
-			<nav class="shadow">
-				<a href="#work" class="active" onclick="tabClick('work')"><span>Work</span></a>
-				<a href="#projects" onclick="tabClick('projects')"><span>Projects</span></a>
-				<a href="#education" onclick="tabClick('education')"><span>Education</span></a>
-				<a href="#interests" onclick="tabClick('interests')"><span>Interests</span></a>
-			</nav>
-			<div class="info-container shadow">
-				<div id="work" class="info">
-					<img src="images/scotia.png"/>
-					I have completed three work terms with Scotiabank totaling 16 months of work experience.<p/>
-					During all three terms I worked for the Algorithmic Trading Team to develop software that would make daily tasks more efficient. Often the projects I worked on used large amounts of trade data and were time sensitive.<p/>
-					The technologies I used were C#, SQL, Java, Python, and VBA.
-				</div>
-				<div id="projects">
-					<a href="salt.to">SALT</a>, a website to help introduce notable food cuisines in Scarborough.  Built in Django with Material Design.<p/>
-					<a href="https://mediacat.utsc.utoronto.ca/">MediaCat</a>, a project to assist in the research of online news. I assisted in the early software designing stages.<p/>
-					<a href="https://github.com/matplotlib/matplotlib">Matplotlib</a>, an open-source python plotting library.  I have made several contributions to the library.<p/>
-					<a href="http://www.libbyreeves.me/">Libby Reeves's Portfolio</a>, a testament to what can be done in 5 hours.
-				</div>
-				<div id="education">
-					<img src="images/utsc.png"/>
-					<h2>University of Toronto</h2>
-					<h3>Honours Bachelor of Science</h3>
-					Computer Science Specialist Program, 4th year<p/>
-					I will be graduating in mid-April, 2016.
-				</div>
-				<div id="interests">
-					I have completed three work terms with Scotiabank
-				</div>
-			</div>
-		</section>
+		</div>
 	</main>
 </div>
-<!--<video src="h3.webm" loop autoplay type="video/webm"></video>-->
-<script src="scripts/main.js"></script>
-<script>
-	!function (k, i, r, o, w) {
-		k.GoogleAnalyticsObject = r;
-		k[r] || (k[r] = function () {
-			(k[r].q = k[r].q || []).push(arguments)
-		});
-		k[r].l = +new Date;
-		o = i.createElement('script');
-		w = i.scripts[0];
-		o.src = '//www.google-analytics.com/analytics.js';
-		w.parentNode.insertBefore(o, w)
-	}(window, document, 'ga');
-	ga('create', 'UA-75490806-1', 'kirow.ca');
-	ga('send', 'pageview');
-</script>
 </body>
 </html>
-
