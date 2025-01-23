@@ -16,7 +16,8 @@ html, body {
   font-variant: small-caps;
   font-size: 20px;
   margin: 0;
-  padding: 0;
+  padding: 0; 
+  background: linear-gradient(135deg, rgb(244, 244, 244) 0%, rgb(233, 233, 233) 100%);
 }
 
 .card-frame {
@@ -47,9 +48,6 @@ transform-style: preserve-3d;
 .card-container:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-.card-container[data-hovered] {
-  transform: translateY(-10px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
 }
 		
 .card {
@@ -138,20 +136,21 @@ transform-style: preserve-3d;
 	</main>
 </div>
 <script>
-document.querySelectorAll('html').forEach(card => {
+document.querySelectorAll('html').forEach(dom => {
     let rect;
     let maxRotation = 15; // Max rotation in degrees for X and Y axis
-
+    let card = document.querySelector('.card-container');
+	
     // Get the bounding rectangle of the card on mousemove
     const updateRect = () => {
-      rect = card.getBoundingClientRect();
+      rect = dom.getBoundingClientRect();
     };
 
     // Update on load and resize
     window.addEventListener('load', updateRect);
     window.addEventListener('resize', updateRect);
 
-    card.addEventListener('mousemove', (e) => {
+    dom.addEventListener('mousemove', (e) => {
       updateRect();
       
       const x = e.clientX;
@@ -169,13 +168,6 @@ document.querySelectorAll('html').forEach(card => {
 
       // Apply rotation based on mouse position
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-      card.setAttribute('data-hovered', '');
-    });
-
-    card.addEventListener('mouseleave', () => {
-      // Reset rotation when mouse leaves the card
-      card.style.transform = '';
-      card.removeAttribute('data-hovered');
     });
   });
 </script>
