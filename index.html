@@ -30,15 +30,28 @@ html, body {
   max-width: 600px;
   padding: 2% 0;
   margin: 3% 5%;
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
-              0 4px 5px 0 rgba(0, 0, 0, 0.14),
-              0 1px 10px 0 rgba(0, 0, 0, 0.12);
-  background: -moz-linear-gradient(70deg,  rgba(229,221,190,0.7) 0%, rgba(229,221,190,0) 31%, rgba(229,221,190,0) 78%, rgba(229,221,190,0.7) 100%);
-  background: -webkit-linear-gradient(70deg,  rgba(229,221,190,0.7) 0%,rgba(229,221,190,0) 31%,rgba(229,221,190,0) 78%,rgba(229,221,190,0.7) 100%);
-  background: linear-gradient(70deg,  rgba(229,221,190,0.7) 0%,rgba(229,221,190,0) 31%,rgba(229,221,190,0) 78%,rgba(229,221,190,0.7) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e5ddbe', endColorstr='#b3e5ddbe',GradientType=1 );
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 10px 20px 0 rgba(0, 0, 0, 0.12), 0 2px 30px 0 rgba(0, 0, 0, 0.10);
+background: linear-gradient(145deg, #f8f3eb 0%, #f2e9dc 50%, #ece3d6 100%);
+background-blend-mode: multiply;
+background-image: linear-gradient(145deg, #f8f3eb 0%, #f2e9dc 50%, #ece3d6 100%), url(https://www.transparenttextures.com/patterns/white-wall.png);
+background-size: cover;
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 2px;
+color: #333;
+line-height: 1.6;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+perspective: 1000px;
+transform-style: preserve-3d;
 }
-
+		
+.card-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.card-container[data-hovered] {
+  transform: translateY(-10px) rotateX(var(--rotateX)) rotateY(var(--rotateY));
+}
+		
 .card {
   display: flex;
   flex-direction: column;
@@ -124,5 +137,47 @@ html, body {
 		</div>
 	</main>
 </div>
+<script>
+document.querySelectorAll('html').forEach(card => {
+    let rect;
+    let maxRotation = 15; // Max rotation in degrees for X and Y axis
+
+    // Get the bounding rectangle of the card on mousemove
+    const updateRect = () => {
+      rect = card.getBoundingClientRect();
+    };
+
+    // Update on load and resize
+    window.addEventListener('load', updateRect);
+    window.addEventListener('resize', updateRect);
+
+    card.addEventListener('mousemove', (e) => {
+      updateRect();
+      
+      const x = e.clientX;
+      const y = e.clientY;
+
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const distanceX = x - centerX;
+      const distanceY = y - centerY;
+
+      // Calculate the max allowable rotation
+      const rotateX = Math.min(maxRotation, Math.max(-maxRotation, (distanceY / rect.height) * maxRotation));
+      const rotateY = Math.min(maxRotation, Math.max(-maxRotation, (distanceX / rect.width) * maxRotation));
+
+      // Apply rotation based on mouse position
+      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.setAttribute('data-hovered', '');
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Reset rotation when mouse leaves the card
+      card.style.transform = '';
+      card.removeAttribute('data-hovered');
+    });
+  });
+</script>
 </body>
 </html>
